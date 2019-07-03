@@ -1,0 +1,147 @@
+﻿<Page x:Class="Menu.Les_interfaces.Ajouter_b1_etre"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:Menu.Les_interfaces"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="18"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Ajouter_b1_etre">
+    <Grid>
+        <Grid>
+            <Grid.Background>
+
+                <ImageBrush ImageSource="..\images\slide1.jpg" Stretch="Fill"/>
+            </Grid.Background>
+            <Grid.Effect>
+                <BlurEffect Radius="7">
+                </BlurEffect>
+            </Grid.Effect>
+        </Grid>
+
+        <Grid>
+
+            <materialDesign:Card Padding="10" Margin="24,10,25,0" Background="#FFF" Grid.Row="0" Height="100">
+                <!-- ...or hyperlink style can be set manually -->
+                <!-- ...or hyperlink style can be set manually -->
+                <Label HorizontalAlignment="Center" Content="Ajouter un produit de Bien être" Foreground="#FF2980B9">
+                    <Label.Style >
+                        <Style TargetType="{x:Type Label}">
+                            <Setter Property="FontSize" Value="45"/>
+                            <Style.BasedOn>
+                                <Style TargetType="{x:Type Label}">
+                                    <Setter Property="FontSize" Value="13"/>
+                                    <Setter Property="FontWeight" Value="Normal"/>
+                                    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="Foreground" Value="{DynamicResource MaterialDesignCheckBoxDisabled}"/>
+                                        </Trigger>
+                                        <Trigger Property="IsEnabled" Value="True">
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                        </Trigger>
+                                        <MultiTrigger>
+                                            <MultiTrigger.Conditions>
+                                                <Condition Property="IsEnabled" Value="True"/>
+                                                <Condition Property="IsMouseOver" Value="True"/>
+                                            </MultiTrigger.Conditions>
+
+                                        </MultiTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Style.BasedOn>
+                        </Style>
+                    </Label.Style>
+                </Label>
+            </materialDesign:Card>
+            <!--    <materialDesign:Card Padding="20" Margin="499,10,29,0" Background="#FFF" Grid.Row="1" Height="100">
+            <TextBox
+                materialDesign:HintAssist.Hint="DCI : "
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF2980B9" Foreground="#FF2980B9" FontSize="18" FontWeight="Bold" />
+        </materialDesign:Card>
+        -->
+            <Grid Margin="0,113,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="93*"/>
+                    <RowDefinition Height="87*"/>
+                    <RowDefinition Height="91*"/>
+                    <RowDefinition Height="153*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Margin="25,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="Marque"
+                    materialDesign:HintAssist.Hint="Marque * " 
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="5,10,10,10" BorderBrush="#FF2980B9" Foreground="#FF2980B9" FontSize="18" CaretBrush="#FF151922" FontFamily="Sitka Display" FontWeight="Bold" Text="" />
+                    <TextBox x:Name="Type"
+                    materialDesign:HintAssist.Hint="Type * " 
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,10,23,10" BorderBrush="#FF2980B9" Foreground="#FF2980B9" CaretBrush="#FF151922" FontSize="18" FontWeight="Bold" Grid.Column="1" FontFamily="Sitka Display" SelectionBrush="#FF2980B9" />
+                    <TextBox x:Name="main_ingred"
+                    materialDesign:HintAssist.Hint="Composition Principale * " 
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,10,22,10" BorderBrush="#FF2980B9" Foreground="#FF2980B9" CaretBrush="#FF151922" FontSize="18" FontWeight="Bold" Grid.Column="2" FontFamily="Sitka Display" />
+
+
+                </Grid>
+                <Grid Grid.Row="1" Margin="25,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="Quantite"
+                    materialDesign:HintAssist.Hint="Quantité * " 
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="5,10,10,11" BorderBrush="#FF2980B9" Foreground="#FF2980B9" FontSize="18" CaretBrush="#FF151922" FontFamily="Sitka Display" FontWeight="Bold" Text="" />
+                    <TextBox x:Name="prix"
+                    materialDesign:HintAssist.Hint="Prix * " 
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,11,28,10" BorderBrush="#FF2980B9" Foreground="#FF2980B9" FontSize="18" CaretBrush="#FF151922" FontFamily="Sitka Display" FontWeight="Bold" Text="" Grid.Column="1" />
+                </Grid>
+
+                <Grid Grid.Row="2" Margin="25,0" Height="86" VerticalAlignment="Bottom">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="296*"/>
+                        <ColumnDefinition Width="284*"/>
+                        <ColumnDefinition Width="309*"/>
+                    </Grid.ColumnDefinitions>
+                    <DatePicker Grid.Column="0" x:Name="date_prod"
+                    materialDesign:HintAssist.Hint="Date De Production "
+                    Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="10,29,10,10" Foreground="#FF2980B9" BorderBrush="#FF2980B9" FontFamily="Sitka Display" FontSize="18" FontWeight="Bold" />
+                    <DatePicker x:Name="date_peromp" Grid.Column="1"
+                    materialDesign:HintAssist.Hint="Date De Peremption * "
+                    Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="0,29,15,10" Foreground="#FF2980B9" BorderBrush="#FF2980B9" FontFamily="Sitka Display" FontSize="18" FontWeight="Bold" HorizontalAlignment="Right" Width="225" />
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                        <Button Grid.Column="1" Grid.Row="0"
+            Style="{StaticResource MaterialDesignFloatingActionButton}"
+            ToolTip="Valider"  Background="#FF2980B9" BorderBrush="{x:Null}" Click="Button_Click" VerticalAlignment="Bottom" Margin="10,0,334,56" >
+
+                        <materialDesign:PackIcon Kind="Plus" Height="40" Width="40"  />
+                    </Button>
+                    <Button Grid.Column="0" Grid.Row="0"
+            Style="{StaticResource MaterialDesignFloatingActionButton}"
+            ToolTip="Réinitialiser" Background="#FF2980B9" BorderBrush="{x:Null}" VerticalAlignment="Bottom" Click="Button_Click_1"  HorizontalAlignment="Left" Margin="334,0,0,56">
+                        <materialDesign:PackIcon Kind="Reload" Height="40"
+                Width="40"  />
+                    </Button>
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>

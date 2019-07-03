@@ -1,0 +1,99 @@
+﻿<Window x:Class="Menu.info_pharm"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        
+        Title="MainWindow" Height="535 " Width="930" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="#FF151922" >
+            <Label Content="Pharm Plus" VerticalAlignment="Top" Margin="30,77,0,0" Background="{x:Null}" Foreground="#FF2980B9" FontFamily="Sitka Display" FontSize="65" HorizontalAlignment="Left" Width="306" Height="76"/>
+            <Label Content="Bienvenue" VerticalAlignment="Top" Margin="30,191,0,0" Background="{x:Null}" Foreground="White" FontFamily="Sitka Display" FontSize="48" HorizontalAlignment="Left" Width="306" Height="61"/>
+
+            <TextBlock HorizontalAlignment="Left" Height="67" Margin="30,291,0,0" VerticalAlignment="Top" Width="386" Background="{x:Null}" Foreground="White" FontFamily="Sitka Display" FontSize="20" TextWrapping="Wrap">
+              Entrez les informations de votre pharmacie pour que vous puissiez connecter au réseau!
+            </TextBlock>
+
+
+        </Grid>
+        <Grid  Grid.Column="1" Background="#FF2980B9">
+            <StackPanel Height="400" Margin="40,10" >
+                <Grid Height="400">
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+
+                    <Grid Grid.Row="0">
+
+                        <TextBox x:Name="pharmacie" Width="240"
+  materialDesign:HintAssist.Hint="Nom de pharmacie"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Sitka Display" FontSize="18" Foreground="White" BorderThickness="0,0,0,2" Margin="0,10,15,0" BorderBrush="#FF151922" TextChanged="pharmacie_TextChanged" />
+                        <materialDesign:PackIcon Kind="Pharmacy"  Height="29" Margin="10,35,330,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="29" Foreground="#FF151922" />
+
+
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <TextBox x:Name="adress" Width="240"
+  materialDesign:HintAssist.Hint="L'adresse"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Sitka Display" FontSize="18" Foreground="White" BorderThickness="0,0,0,2" Margin="0,10,15,0" BorderBrush="#FF151922" />
+                        <materialDesign:PackIcon Kind="Home"  Height="29" Margin="10,35,330,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="29" Foreground="#FF151922" />
+
+                    </Grid>
+
+                    <Grid Grid.Row="2" >
+                        <TextBox x:Name="telephone" Width="240"
+  materialDesign:HintAssist.Hint="Numero de telephone"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Sitka Display" FontSize="18" Foreground="White" BorderThickness="0,0,0,2" Margin="0,10,15,0" BorderBrush="#FF151922" />
+                        <materialDesign:PackIcon Kind="Phone"  Height="29" Margin="10,35,330,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="29" Foreground="#FF151922" />
+
+
+                    </Grid>
+                    <Grid Grid.Row="3" >
+
+                        <TextBox x:Name="fax" Width="240"
+  materialDesign:HintAssist.Hint="Numero de FAX"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Sitka Display" FontSize="18" Foreground="White" BorderThickness="0,0,0,2" Margin="0,10,15,0" BorderBrush="#FF151922" />
+                        <materialDesign:PackIcon Kind="Fax"  Height="29" Margin="10,35,330,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="29" Foreground="#FF151922" />
+                    </Grid>
+                    <Grid Grid.Row="4" >
+
+                        <TextBox x:Name="IP" Width="240"
+  materialDesign:HintAssist.Hint="Adresse ip de serveur"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Sitka Display" FontSize="18" Foreground="White" BorderThickness="0,0,0,2" Margin="0,10,15,0" BorderBrush="#FF151922" />
+                        <materialDesign:PackIcon Kind="CodeTags"  Height="29" Margin="10,35,330,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="29" Foreground="#FF151922" />
+                    </Grid>
+                    <Grid Grid.Row="5" >
+                        <Button x:Name="Check"
+    Style="{StaticResource MaterialDesignFlatButton}"
+      Margin="138,22,101,16" Background="#FFEEEEF2" Foreground="#FF2980B9" Content="Valider" Padding="10,4" Click="Check_Click"/>
+
+                    </Grid>
+                </Grid>
+            </StackPanel>
+
+
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,236 @@
+﻿<Page x:Class="Menu.recherche"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:Menu"   
+      xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+      d:DesignWidth="800"
+	Title="Page3">
+    <Grid>
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource=".\images\w.jpg" Stretch="Fill"/>
+            </Grid.Background>
+            <Grid.Effect>
+                <BlurEffect Radius="15">
+                </BlurEffect>
+            </Grid.Effect>
+        </Grid>
+
+        <StackPanel >
+
+            <materialDesign:Card Padding="10" Margin="24,10,25,0" Background="#FFF" Grid.Row="0" Height="100">
+                <!-- ...or hyperlink style can be set manually -->
+                <!-- ...or hyperlink style can be set manually -->
+                <Label HorizontalAlignment="Center" Content="Rechercher Un Médicament" Foreground="#FF2980B9">
+                    <Label.Style >
+                        <Style TargetType="{x:Type Label}">
+                            <Setter Property="FontSize" Value="45"/>
+                            <Style.BasedOn>
+                                <Style TargetType="{x:Type Label}">
+                                    <Setter Property="FontSize" Value="13"/>
+                                    <Setter Property="FontWeight" Value="Normal"/>
+                                    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="Foreground" Value="{DynamicResource MaterialDesignCheckBoxDisabled}"/>
+                                        </Trigger>
+                                        <Trigger Property="IsEnabled" Value="True">
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                        </Trigger>
+                                        <MultiTrigger>
+                                            <MultiTrigger.Conditions>
+                                                <Condition Property="IsEnabled" Value="True"/>
+                                                <Condition Property="IsMouseOver" Value="True"/>
+                                            </MultiTrigger.Conditions>
+
+                                        </MultiTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Style.BasedOn>
+                        </Style>
+                    </Label.Style>
+                </Label>
+            </materialDesign:Card>
+            <Border Margin="0,20,0,6" Padding="15"  BorderThickness="5">
+
+                <Grid  RenderTransformOrigin="0.5,0.5"  >
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0.367"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="5">
+                        <TextBox materialDesign:HintAssist.Hint="DCI" materialDesign:ListBoxAssist.IsToggle="True" FontSize="18" Foreground="#FF2980B9"
+        				Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+        				x:Name="dci" Width="413" FontFamily="Sitka Display" FontWeight="Bold" BorderBrush="#FF2980B9" BorderThickness="0,0,0,2"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right" Margin="0,5,20,1" Width="261">
+
+                        <Button  Style="{StaticResource MaterialDesignRaisedLightButton}"
+        				
+       
+        				Click="recherche_button_Click" x:Name="recherche_button" Content="Rechercher"  FontSize="20" Margin="5,6" Background="#FF2980B9" Width="120" Foreground="White" FontFamily="Sitka Display" Height="Auto"/>
+
+                        <Button  Style="{StaticResource MaterialDesignRaisedLightButton}"
+        				
+  
+        				x:Name="reset_button" Content="Réinitialiser"   Click="reset_Checked" FontSize="20" Background="#FF2980B9" Height="Auto" Width="130" Foreground="White" Margin="5.6,6" FontFamily="Sitka Display" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Grid.Row="3" Margin="-124,0,-117,0">
+                        <Button x:Name="viewmore" HorizontalAlignment="center" Click="viewmore_Checked" Background="White" 
+                            Style="{StaticResource MaterialDesignFloatingActionLightButton}"
+                             Width="32"  Height="30" Margin="486,0,483,0" >
+                            <materialDesign:PackIcon Kind="UnfoldMoreHorizontal"   />
+                        </Button>
+                    </StackPanel>
+                    <StackPanel x:Name="grid" Grid.Row="1"  Visibility="Collapsed">
+                        <Grid  Margin="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+
+                            </Grid.ColumnDefinitions>
+                            <TextBox materialDesign:HintAssist.Hint="Dosage" FontSize="18" Foreground="#FF2980B9" 
+        					Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF2980B9"
+        					x:Name="dosage" Grid.Column="1" Width="413" FontFamily="Sitka Display" BorderThickness="0,0,0,2" />
+                        </Grid>
+                        <Grid  Margin="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox materialDesign:HintAssist.Hint="Marque"  FontSize="18" Foreground="#FF2980B9" FontFamily="Sitka Display"
+        					Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+        					x:Name="marque" Grid.Column="1" Width="413" BorderThickness="0,0,0,2" BorderBrush="#FF2980B9"/>
+                        </Grid>
+                        <Grid  x:Name="grid1" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="80" Margin="-9,0,0,0" Width="459"  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="150"/>
+                            </Grid.ColumnDefinitions>
+                            <ComboBox BorderThickness="0,0,0,2"  materialDesign:HintAssist.Hint=" Forme" BorderBrush="#FF2980B9" Grid.Column="0" FontSize="18" Foreground="#FF2980B9" FontFamily="Sitka Display" Width="115" x:Name="forme" ItemsSource="{Binding}"  VerticalAlignment="Center"/>
+                            <ComboBox  BorderThickness="0,0,0,2" materialDesign:HintAssist.Hint=" Effet" BorderBrush="#FF2980B9" Grid.Column="1" x:Name="effet" Height="Auto" Width="115" FontSize="18" Foreground="#FF2980B9" FontFamily="Sitka Display" ItemsSource="{Binding}"/>
+                            <ComboBox BorderThickness="0,0,0,2"  materialDesign:HintAssist.Hint=" Categorie" BorderBrush="#FF2980B9" Grid.Column="2" x:Name="categorie" Width="115" FontSize="18" Foreground="#FF2980B9" FontFamily="Sitka Display">
+                                <ComboBoxItem>Nouveau</ComboBoxItem>
+                                <ComboBoxItem>Réstitue</ComboBoxItem>
+                            </ComboBox>
+                        </Grid>
+                        <!--<Grid  x:Name="grid2"  HorizontalAlignment="Left"  VerticalAlignment="Top" Height="40" Margin="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        
+                    </Grid>
+                    <Grid  x:Name="grid8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="41" Width="487">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        
+                    </Grid>-->
+                        <Grid>
+                        </Grid>
+                        <Grid x:Name="grid3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="37" Width="293" Margin="5,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" MinWidth="200"/>
+                                <ColumnDefinition Width="auto" MinWidth="200"/>
+                            </Grid.ColumnDefinitions>
+                            <CheckBox x:Name="oriente" BorderBrush="#FF2980B9" FontSize="18" Foreground="#FF2980B9" FontFamily="Sitka Display" Grid.Column="1"  Style="{StaticResource MaterialDesignCheckBox}">
+                                Orienté
+                            </CheckBox>
+                            <CheckBox x:Name="remboursement" BorderBrush="#FF2980B9" FontSize="18" Foreground="#FF2980B9" FontFamily="Sitka Display" Grid.Column="0" Style="{StaticResource MaterialDesignCheckBox}" >Remboursable</CheckBox>
+                        </Grid>
+
+                        <!-- <Grid x:Name="grid5" DataContext="{StaticResource tab_medViewSource}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="340" Margin="5,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" MinWidth="180"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                      <CheckBox x:Name="oriente" Style="{StaticResource MaterialDesignCheckBox}">
+                            orienté
+                        </CheckBox>
+
+                    </Grid>-->
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <StackPanel Width="800" x:Name="list">
+                <Grid Height="300" Margin="10,0,0,0" HorizontalAlignment="Left" Width="780">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" HorizontalAlignment="Center" Foreground="#FF2980B9" Background="{x:Null}" FontSize="25"  Content="Résultats De Recherche" FontFamily="Sitka Display" FontWeight="Bold"></Label>
+                    <ListBox x:Name="the_list" Grid.Row="1" ItemsSource="{Binding}" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" Visibility="Collapsed" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="-5,0" BorderBrush="Aqua" FontSize="16" IsEnabled="{Binding IsChecked, ElementName=EnableListBox}">
+                        <!--<ListBox.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF575757" Offset="1"/>
+                            <GradientStop Color="#FFCFCDCD"/>
+                        </LinearGradientBrush>
+                    </ListBox.Background>-->
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border Margin="0,6,0,6" BorderThickness="2" Background="red" CornerRadius="0">
+                                    <Grid HorizontalAlignment="Stretch" Background="AliceBlue">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="200"/>
+                                            <ColumnDefinition Width="150"/>
+                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Width="auto" Content="{Binding Marque}"/>
+                                        <Label Grid.Column="1" Width="auto" Content="{Binding DCI}"/>
+                                        <Label Grid.Column="2" Width="auto" Content="{Binding Dosage}"/>
+                                        <Label Grid.Column="3" Width="auto" Content="{Binding Effet}"/>
+                                        <Label Grid.Column="4" Width="auto" Content="{Binding Forme}"/>
+                                        <Button  Grid.Column="5" HorizontalAlignment="Right" Height="25" Width="25" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click"
+                                        Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                                                        >
+                                            <materialDesign:PackIcon Kind="MagnifyPlusOutline" Foreground="Black" Width="20" Height="20" />
+                                        </Button>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Label x:Name="aucune" Grid.Row="1" HorizontalAlignment="Center" Visibility="Collapsed"  FontSize="18" Foreground="#FF2980B9" FontFamily="Sitka Display" Content="aucune resultats"></Label>
+                </Grid>
+            </StackPanel>
+            <Popup x:Name="plus" Placement="Center" Width="400" Height="auto">
+                <Border Padding="2" BorderThickness="2" BorderBrush="#FFCED7DA">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30">
+                            </RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0" Background="AliceBlue"></Border>
+                        <Button Grid.Row="0" VerticalAlignment="Center" Background="{x:Null}" x:Name="close" BorderBrush="{x:Null}" Click="close_Click"  HorizontalAlignment="Right" Height="auto" Width="auto" Opacity="0.75" >
+                            <materialDesign:PackIcon  Kind="CloseCircle" Foreground="#FF151922" Opacity="0.75" />
+                        </Button>
+                        <Label Grid.Row="0" HorizontalAlignment="Center" FontSize="14" Content="Plus Information" FontWeight="Bold" FontStyle="Italic"></Label>
+                        <StackPanel Grid.Row="1" x:Name="plus_infos" Background="AliceBlue"></StackPanel>
+                    </Grid>
+                </Border>
+            </Popup>
+        </StackPanel>
+    </Grid>
+
+</Page>

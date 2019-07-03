@@ -1,0 +1,87 @@
+﻿<Window x:Class="Menu.registration2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Menu"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d"
+        Title="registration2" Height="535 " Width="930" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="#FF151922" >
+            <Label Content="Bienvenue" VerticalAlignment="Top" Margin="40,117,0,0" Background="{x:Null}" Foreground="White" FontFamily="Sitka Display" FontSize="48" HorizontalAlignment="Left" Width="306" Height="61"/>
+            <TextBlock HorizontalAlignment="Left" Height="67" Margin="40,235,0,0" VerticalAlignment="Top" Width="233" Background="{x:Null}" Foreground="White" FontFamily="Sitka Display" FontSize="20" TextWrapping="Wrap">
+              Si vous avez déja un compte à votre compte !
+            </TextBlock>
+            <Button x:Name="connect1"
+    Style="{StaticResource MaterialDesignFlatButton}"
+   Background="{x:Null}" Foreground="#FF2980B9" Content="Connectez" Margin="273,235,95,239" FontFamily="Roboto" FontSize="16" Padding="5" Opacity="0.8" Click="connect1_Click"/>
+
+
+        </Grid>
+        <Grid  Grid.Column="1" Background="#FF2980B9">
+            <StackPanel Height="350" Margin="40,60" >
+                <Grid Height="350">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <PasswordBox x:Name="Q1" Width="240"
+  materialDesign:HintAssist.Hint="Numero De Votre Carte D'identité "
+  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Sitka Display" FontSize="18" Foreground="White" BorderThickness="0,0,0,2" Margin="0,10,15,0" BorderBrush="#FF151922" />
+                        <materialDesign:PackIcon Kind="key"  Height="25" Margin="10,59,344,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="25" Foreground="#FF151922" />
+
+                    </Grid>
+                    <Grid Grid.Row="1">
+
+                        <materialDesign:PackIcon Kind="Key"   Height="25" Width="25" Margin="10,49,0,0" Grid.Row="2" Foreground="#FF151922"/>
+                        <PasswordBox Margin="0,10,10,9" Width="240"
+                            x:Name="Q2"
+                            materialDesign:HintAssist.Hint="Numero De Votre Compte CCP"
+                            Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" BorderThickness="0,0,0,2" BorderBrush="#FF151922" Foreground="White" FontFamily="Sitka Display" FontSize="18" />
+
+                    </Grid>
+                    <Grid Grid.Row="2">
+
+                        <PasswordBox Margin="0,10,15,10" Width="240"
+  x:Name="Q3"
+  materialDesign:HintAssist.Hint="La Clé de Votre  Compte CCP "
+  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" BorderThickness="0,0,0,2" BorderBrush="#FF151922" Foreground="White" FontFamily="Sitka Display" FontSize="18" />
+                        <materialDesign:PackIcon Kind="key"   Height="25" Width="25" Margin="10,49,0,0" Foreground="#FF151922"/>
+                    </Grid>
+                    
+                    <Grid Grid.Row="3">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+
+                            <Button x:Name="Reset"
+    Style="{StaticResource MaterialDesignFlatButton}"
+   Margin="0,28,10,27" Background="#FFEEEEF2" Foreground="#FF2980B9" Content="Réinitialiser" Width="105" FontFamily="Roboto" FontSize="14" Padding="10,4" Click="Reset_Click"/>
+
+                            <Button x:Name="Check"
+    Style="{StaticResource MaterialDesignFlatButton}"
+    Margin="0,28,100,27" Background="#FFEEEEF2" Foreground="#FF2980B9" Content="Valider" Width="105" Padding="10,4" Click="Check_Click"/>
+                        </StackPanel>
+                    </Grid>
+
+                </Grid>
+            </StackPanel>
+
+        </Grid>
+
+    </Grid>
+</Window>
+

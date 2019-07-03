@@ -1,0 +1,153 @@
+﻿<Page x:Class="Menu.supprimer_med"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Menu"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="supprimer_med"
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="18"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+
+    <Grid>
+        <Grid>
+            <!--<Grid.Background>
+
+                <ImageBrush ImageSource=".\images\w.jpg" Stretch="Fill"/>
+            </Grid.Background>-->
+            <Grid.Effect>
+                <BlurEffect Radius="15">
+                </BlurEffect>
+            </Grid.Effect>
+        </Grid>
+
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="106*"/>
+                <RowDefinition Height="347*"/>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Padding="10" Margin="10,10,11,0" Background="White" Grid.Row="0" Height="100">
+                <!-- ...or hyperlink style can be set manually -->
+                <TextBlock HorizontalAlignment="Center" FontFamily="Sitka Display">
+  <Hyperlink
+    Style="{StaticResource MaterialDesignDisplay2Hyperlink}" Foreground="#FF2980B9">
+  Supprimer un produit
+</Hyperlink>
+                </TextBlock>
+            </materialDesign:Card>
+            <!--    <materialDesign:Card Padding="20" Margin="499,10,29,0" Background="#FFF" Grid.Row="1" Height="100">
+            <TextBox
+                materialDesign:HintAssist.Hint="DCI : "
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF2980B9" Foreground="#FF2980B9" FontSize="18" FontWeight="Bold" />
+        </materialDesign:Card>
+        -->
+
+
+            <Grid Grid.Row="1" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="62*"/>
+                    <RowDefinition Height="62*"/>
+                    <RowDefinition Height="62*"/>
+                    <RowDefinition Height="62*"/>
+                    <RowDefinition Height="50*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0"  Name="descrip" Text="Si vous voulez  supprimer un stock périmé veuillez cliquer sur le bouton suivant.Sinon vous étes entrain de supprimer le medicament définitivemant" FontFamily="sitka display" FontSize="18px" Foreground="#FF2980B9" Margin="0,0,36,0"></TextBlock>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Name="DCI"
+  materialDesign:HintAssist.Hint="DCI " 
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="5,10,19,10" BorderBrush="#FF2980B9" Foreground="#FF2980B9" FontSize="18" CaretBrush="#FF151922" FontFamily="Sitka Display" FontWeight="Bold" Text="" />
+                    <TextBox Name="Nom_com"
+                    materialDesign:HintAssist.Hint="Nom Commercial  " 
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,10,21,10" BorderBrush="#FF2980B9" Foreground="#FF2980B9" CaretBrush="#FF151922" FontSize="18" FontWeight="Bold" Grid.Column="1" FontFamily="Sitka Display" SelectionBrush="#FF2980B9" TextChanged="Nom_com_TextChanged" />
+                    <TextBox Name="Dosage"
+                    materialDesign:HintAssist.Hint="Dosage  " 
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,10,22,10" BorderBrush="#FF2980B9" Foreground="#FF2980B9" CaretBrush="#FF151922" FontSize="18" FontWeight="Bold" Grid.Column="2" FontFamily="Sitka Display" />
+
+
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                     <ComboBox  Grid.Column="0"
+  materialDesign:HintAssist.Hint="Type" Foreground="#FF2980B9" BorderBrush="#FF2980B9"
+  MinWidth="72"  ItemsSource="{Binding LongListToTestComboVirtualization}"
+  Style="{StaticResource MaterialDesignFloatingHintComboBox}" x:Name="restit" Margin="10,16,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="240" Height="52" >
+                        <ComboBoxItem x:Name="rest" Content="Restitué"/>
+                        <ComboBoxItem x:Name="non_rest" Content="Non Restitué"/>
+                        <ComboBoxItem x:Name="deux" Content="les deux"/>
+                        <ComboBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ComboBox.ItemsPanel>
+                    </ComboBox>
+
+                    <ComboBox x:Name="Forme" FontWeight="Bold"
+  materialDesign:HintAssist.Hint="Forme  "
+  Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="10,16,21,0" Grid.Column="1" BorderBrush="#FF2980B9" Foreground="#FF2980B9" Height="52">
+                    </ComboBox>
+                    <DatePicker Name="date_peromp"
+                    materialDesign:HintAssist.Hint="Date De Peremption "
+                    Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="0,30,18,0" Foreground="#FF2980B9" BorderBrush="#FF2980B9" FontFamily="Sitka Display" FontSize="18" FontWeight="Bold" Grid.Column="2" />
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox     Name="lot" Width="245" Grid.Column="0"
+                materialDesign:HintAssist.Hint="Lot " 
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10,0,0" BorderBrush="#FF2980B9" Foreground="#FF2980B9" FontSize="18" CaretBrush="#FF151922" FontFamily="Sitka Display" FontWeight="Bold" Text=""  HorizontalAlignment="Left" Height="52" TextWrapping="Wrap"  VerticalAlignment="Top"/>
+                   
+                </Grid>
+
+
+                <Grid Grid.Row="4" Height="69" VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button
+  Style="{StaticResource MaterialDesignFloatingActionButton}"
+  ToolTip="MaterialDesignFloatingActionButton" Grid.Column="2" Margin="150,3,54,0" Background="#FF2980B9" BorderBrush="{x:Null}" Click="Button_Click" VerticalAlignment="Top">
+
+                        <materialDesign:PackIcon Kind="Plus" Height="40" Width="40"  />
+                    </Button>
+                    <Button
+                    Style="{StaticResource MaterialDesignFloatingActionButton}"
+                    ToolTip="MaterialDesignFloatingActionButton" Grid.Column="2" Margin="62,3,142,0" Background="#FF2980B9" BorderBrush="{x:Null}" VerticalAlignment="Top" Click="Button_Click_1">
+                        <materialDesign:PackIcon Kind="Reload" Height="40"
+                        Width="40"  />
+                    </Button>
+
+                </Grid>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

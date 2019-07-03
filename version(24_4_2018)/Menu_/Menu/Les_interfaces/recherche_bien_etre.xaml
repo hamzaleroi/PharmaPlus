@@ -1,0 +1,96 @@
+﻿<Page x:Class="Menu.Les_interfaces.recherche_bien_etre"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Menu.Les_interfaces"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="recherche_bien_etre"
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+
+    <Grid>
+        <Grid>
+            <Grid.Background>
+
+                <ImageBrush ImageSource="..\images\slide1.jpg" Stretch="Fill"/>
+            </Grid.Background>
+            <Grid.Effect>
+                <BlurEffect Radius="7">
+                </BlurEffect>
+            </Grid.Effect>
+        </Grid>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="102*"  />
+                <RowDefinition Height="145*"/>
+                <RowDefinition Height="222*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <materialDesign:Card Padding="15" Margin="50,10,50,5" Background="White">
+                    <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" HorizontalAlignment="Center" Foreground="#FF2980B9" FontSize="36" FontFamily="Sitka Display">Rechercher Un Produit Bien-étre</TextBlock>
+                </materialDesign:Card>
+
+            </Grid>
+            <Grid Grid.Row="1">
+                <StackPanel>
+                    <materialDesign:Card Background="#FFF" Margin="20,20" Height="131">
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox x:Name="Marque" Grid.Column="0"
+  materialDesign:HintAssist.Hint="Marque * "
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF2980B9" BorderThickness="0,0,0,2" CaretBrush="#FF2980B9" Foreground="#FF2980B9" SelectionBrush="#FF2980B9" FontFamily="Sitka Display" FontSize="18" Margin="15" />
+                                <TextBox x:Name="type" Grid.Column="1"
+  materialDesign:HintAssist.Hint="Type * "
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#FF2980B9" BorderThickness="0,0,0,2" CaretBrush="#FF2980B9" Foreground="#FF2980B9" SelectionBrush="#FF2980B9" FontFamily="Sitka Display" FontSize="18" Margin="15" />
+
+                                <Button x:Name="Search" Grid.Column="2" Margin="30,15,30,10"
+                                    Style="{StaticResource MaterialDesignFlatButton}"
+     Background="#FF2980B9" Foreground="White" Padding="10,7" FontSize="18" FontFamily="Sitka Display" Height="Auto" Click="Search_Click">
+                                    Rechercher
+                                </Button>
+                            </Grid>
+                        </StackPanel>
+                    </materialDesign:Card>
+                </StackPanel>
+
+            </Grid>
+
+            <Grid Grid.Row="2" Margin="40,20">
+                <Grid.Background>
+                    <SolidColorBrush Color="#FFDFE6E9" Opacity="0.5"/>
+                </Grid.Background>
+                <ListView x:Name="view_bien_etre"  Margin="0" Background="{x:Null}" BorderBrush="#FF304FFE" Foreground="#FF304FFE"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center" SelectionChanged="view_bien_etre_SelectionChanged" >
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Width="100" Header="Marque" DisplayMemberBinding="{Binding  Marque}" />
+                            <GridViewColumn Width="100" Header="Type" DisplayMemberBinding="{Binding  type}"/>
+                            <GridViewColumn Width="100" Header="Composition Principale" DisplayMemberBinding="{Binding  Gout}"/>
+                            <GridViewColumn Width="180" Header="Date De Production" DisplayMemberBinding="{Binding  DateDeProduction}"/>
+                            <GridViewColumn Width="180" Header="Date De Peremption" DisplayMemberBinding="{Binding  DateDePeremption}"/>
+                            <GridViewColumn Width="100" Header="Quantité" DisplayMemberBinding="{Binding  Quantite}"/>
+                            <GridViewColumn Width="180" Header="Prix Unitaire (DA)" DisplayMemberBinding="{Binding Prix}"/>
+
+
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </Grid>
+        <ListBox HorizontalAlignment="Left" Height="100" Margin="-439,261,0,0" VerticalAlignment="Top" Width="100"/>
+
+    </Grid>
+</Page>

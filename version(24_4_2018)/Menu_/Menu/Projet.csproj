@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7B43BE34-60D3-4DA5-B4E0-57DEC7BE7141}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Menu</RootNamespace>
+    <AssemblyName>Menu</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ColorCode">
+      <HintPath>C:\Users\hamza\Desktop\pharm+\WpfApplication3\WpfApplication3\bin\Debug\ColorCode.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FontAwesome.WPF">
+      <HintPath>C:\Users\hamza\Desktop\pharm+\WpfApplication3\WpfApplication3\bin\Debug\FontAwesome.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer">
+      <HintPath>C:\Users\hamza\Desktop\pharm+\WpfApplication3\WpfApplication3\bin\Debug\HtmlRenderer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer.PdfSharp">
+      <HintPath>C:\Users\hamza\Desktop\pharm+\WpfApplication3\WpfApplication3\bin\Debug\HtmlRenderer.PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>C:\Users\hamza\Desktop\pharm+\WpfApplication3\WpfApplication3\bin\Debug\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>C:\Users\hamza\Desktop\pharm+\WpfApplication3\WpfApplication3\bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts">
+      <HintPath>C:\Users\hamza\Desktop\pharm+\WpfApplication3\WpfApplication3\bin\Debug\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf">
+      <HintPath>C:\Users\hamza\Desktop\pharm+\WpfApplication3\WpfApplication3\bin\Debug\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.1.2\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.4.0.1044, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.4.0.1044\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\hamza\Desktop\pharm+\WpfApplication3\WpfApplication3\bin\Debug\Microsoft.Expression.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Maps.MapControl.WPF">
+      <HintPath>..\..\Nouveau dossier\C#\BingMapControl\bin\Microsoft.Maps.MapControl.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="NTidy">
+      <HintPath>C:\Users\hamza\Desktop\pharm+\WpfApplication3\WpfApplication3\bin\Debug\NTidy.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot">
+      <HintPath>C:\Users\hamza\Desktop\pharm+\WpfApplication3\WpfApplication3\bin\Debug\OxyPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.Wpf">
+      <HintPath>C:\Users\hamza\Desktop\pharm+\WpfApplication3\WpfApplication3\bin\Debug\OxyPlot.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Pdfizer">
+      <HintPath>C:\Users\hamza\Desktop\pharm+\WpfApplication3\WpfApplication3\bin\Debug\Pdfizer.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp">
+      <HintPath>C:\Users\hamza\Desktop\pharm+\WpfApplication3\WpfApplication3\bin\Debug\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting">
+      <HintPath>C:\Users\hamza\Desktop\pharm+\WpfApplication3\WpfApplication3\bin\Debug\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="ReachFramework" />
+    <Reference Include="Roi, Version=1.0.6666.24132, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Projects\Roi\Roi\bin\Debug\Roi.dll</HintPath>
+    </Reference>
+    <Reference Include="sapbusinessobjects.wpf.viewer, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="SAPBusinessObjects.WPF.ViewerShared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Select.HtmlToPdf">
+      <HintPath>C:\Users\hamza\Desktop\pharm+\WpfApplication3\WpfApplication3\bin\Debug\Select.HtmlToPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Device" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="BasicColumn.xaml.cs" />
+    <Compile Include="bien_etre.cs" />
+    <Compile Include="BilanDeVente.xaml.cs">
+      <DependentUpon>BilanDeVente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="change_ip.xaml.cs">
+      <DependentUpon>change_ip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="info_pharm.xaml.cs">
+      <DependentUpon>info_pharm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="reponse_recu.xaml.cs">
+      <DependentUpon>reponse_recu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="cmd_recu.xaml.cs">
+      <DependentUpon>cmd_recu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Compte_info.xaml.cs">
+      <DependentUpon>Compte_info.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="contacter.xaml.cs">
+      <DependentUpon>contacter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase.cs" />
+    <Compile Include="info_fact.cs" />
+    <Compile Include="Les_interfaces\Ajouter_med.xaml.cs">
+      <DependentUpon>Ajouter_med.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Les_interfaces\cmd_autre_pharm.xaml.cs">
+      <DependentUpon>cmd_autre_pharm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Les_interfaces\CrystalReport_cmd_med.cs">
+      <DependentUpon>CrystalReport_cmd_med.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Les_interfaces\CrystalReport_cmd_bien_etre.cs">
+      <DependentUpon>CrystalReport_cmd_bien_etre.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Les_interfaces\CrystalReport1.cs">
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="echange.xaml.cs">
+      <DependentUpon>echange.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="info_med.xaml.cs">
+      <DependentUpon>info_med.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Les_interfaces\Ajouter_bien_etre.xaml.cs">
+      <DependentUpon>Ajouter_bien_etre.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Les_interfaces\liste_produit_categorie.xaml.cs">
+      <DependentUpon>liste_produit_categorie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Les_interfaces\Page_bien.xaml.cs">
+      <DependentUpon>Page_bien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Les_interfaces\Page_med.xaml.cs">
+      <DependentUpon>Page_med.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Les_interfaces\rapport_facture.xaml.cs">
+      <DependentUpon>rapport_facture.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Les_interfaces\recherche_bien_etre.xaml.cs">
+      <DependentUpon>recherche_bien_etre.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Les_interfaces\Saisir_cmd_bien_etre.xaml.cs">
+      <DependentUpon>Saisir_cmd_bien_etre.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Les_interfaces\Saisir_commande.xaml.cs">
+      <DependentUpon>Saisir_commande.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Les_interfaces\Saisir_facture.xaml.cs">
+      <DependentUpon>Saisir_facture.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Les_interfaces\supprimer_med.xaml.cs">
+      <DependentUpon>supprimer_med.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Les_interfaces\Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Les_interfaces\Window_cmd.xaml.cs">
+      <DependentUpon>Window_cmd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Les_interfaces\Window_cmd_bien_etre.xaml.cs">
+      <DependentUpon>Window_cmd_bien_etre.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Listview_content.cs" />
+    <Compile Include="Listview_content1.cs" />
+    <Compile Include="Listview_content2.cs" />
+    <Compile Include="list_content_cmd.cs" />
+    <Compile Include="list_content_cmd_b1_etre.cs" />
+    <Compile Include="log_in.xaml.cs">
+      <DependentUpon>log_in.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="mydbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mydbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Notification.xaml.cs">
+      <DependentUpon>Notification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="oubie_pas.xaml.cs">
+      <DependentUpon>oubie_pas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="oui_non.xaml.cs">
+      <DependentUpon>oui_non.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Parametre.xaml.cs">
+      <DependentUpon>Parametre.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PDFImprimer.xaml.cs">
+      <DependentUpon>PDFImprimer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="recherche.xaml.cs">
+      <DependentUpon>recherche.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Regetration1.xaml.cs">
+      <DependentUpon>Regetration1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="registration2.xaml.cs">
+      <DependentUpon>registration2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="reset_password.xaml.cs">
+      <DependentUpon>reset_password.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Les_interfaces\Supprimer_BienEtre.xaml.cs">
+      <DependentUpon>Supprimer_BienEtre.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tab_Med.cs" />
+    <Compile Include="UserControl1.xaml.cs" />
+    <Page Include="BasicColumn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BilanDeVente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="change_ip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="info_pharm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="reponse_recu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="cmd_recu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Compte_info.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="contacter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="echange.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="info_med.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Les_interfaces\Ajouter_bien_etre.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Les_interfaces\Ajouter_med.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Les_interfaces\cmd_autre_pharm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Les_interfaces\liste_produit_categorie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Les_interfaces\Page_bien.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Les_interfaces\Page_med.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Les_interfaces\rapport_facture.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Les_interfaces\recherche_bien_etre.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Les_interfaces\Saisir_cmd_bien_etre.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Les_interfaces\Saisir_commande.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Les_interfaces\Saisir_facture.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Les_interfaces\supprimer_med.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Les_interfaces\Window1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Les_interfaces\Window_cmd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Les_interfaces\Window_cmd_bien_etre.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="log_in.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="map.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Notification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="oubie_pas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="oui_non.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Parametre.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PDFImprimer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="recherche.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Regetration1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="registration2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="reset_password.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Les_interfaces\Supprimer_BienEtre.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="map.xaml.cs">
+      <DependentUpon>map.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Les_interfaces\CrystalReport_cmd_med.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_cmd_med.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Les_interfaces\CrystalReport_cmd_bien_etre.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_cmd_bien_etre.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Les_interfaces\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="mydbDataSet.xsc">
+      <DependentUpon>mydbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="mydbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mydbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mydbDataSet.xss">
+      <DependentUpon>mydbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Les_interfaces\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\stat1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\slide1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Class_BDD\" />
+    <Folder Include="DAL\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\i2.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\im1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\im2.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\im3.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\images %281%29.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\j.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\LOGO_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\w.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\12.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

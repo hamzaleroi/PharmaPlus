@@ -1,0 +1,189 @@
+﻿<Page x:Class="Menu.echange"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Menu"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="echange"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource=".\images\x.jpg" Stretch="Fill"/>
+            </Grid.Background>
+            <Grid.Effect>
+                <BlurEffect Radius="15">
+                </BlurEffect>
+            </Grid.Effect>
+        </Grid>
+
+        <Grid >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <materialDesign:Card Margin="10,10,100,0" Background="#FFDFE6E9 "  Grid.Row="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+        Height="140" />
+                            <RowDefinition
+        Height="*" />
+                            <RowDefinition
+        Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Image
+     Source="images\stat1.png"
+      Height="140"
+      Width="196"
+      Stretch="UniformToFill" ></Image>
+                        <Button
+      Grid.Row="0"
+      Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+      HorizontalAlignment="Right"
+      VerticalAlignment="Bottom"
+                    Foreground="#FFDFE6E9 "
+      Margin="0 0 16 -20" Click="Button_Click" Background="#FF2B357F" BorderBrush="#FF2B357F">
+                            <materialDesign:PackIcon
+        Kind="ChartBar" />
+                        </Button>
+                        <StackPanel
+      Grid.Row="1"
+      Margin="8 24 8 0">
+                            <TextBlock Foreground="#FF2980B9" FontFamily="Sitka Display" FontSize="18">
+      Statistiques d'échanges
+                            </TextBlock>
+                            <TextBlock
+        TextWrapping="Wrap"
+        VerticalAlignment="Center">
+      Cliquez sur le boutton pour voir toutes les echanges que vous avez fait avec d'autres pharmacies! .
+                            </TextBlock>
+                        </StackPanel>
+                        <StackPanel
+      HorizontalAlignment="Right"
+      Grid.Row="2"
+      Orientation="Horizontal"
+      Margin="8">
+                            <!-- <Button
+        Style="{StaticResource MaterialDesignToolButton}"
+        Width="30"
+        Padding="2 0 2 0"
+        materialDesign:RippleAssist.IsCentered="True">
+                        <materialDesign:PackIcon
+          Kind="ShareVariant" />
+                    </Button> -->
+                            <!-- <Button
+        Style="{StaticResource MaterialDesignToolButton}"
+        Width="30"
+        Padding="2 0 2 0"
+        materialDesign:RippleAssist.IsCentered="True">
+                        <materialDesign:PackIcon
+          Kind="Heart" />
+                    </Button>  -->
+                            <!--    <materialDesign:PopupBox
+       Style="{StaticResource MaterialDesignToolPopupBox}"
+        Padding="2 0 2 0">
+                        <StackPanel>
+                            <Button
+            Content="More" />
+                            <Button
+            Content="Options" />
+                        </StackPanel>
+                    </materialDesign:PopupBox>-->
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+
+
+                <ListView x:Name="viewpharm" Grid.Row="1" BorderThickness="5" Margin="0,10,10,10" Background="{x:Null}" BorderBrush="#FF2B357F"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Foreground="#FF2B357F" SelectionChanged="viewpharm_SelectionChanged" >
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn  Width="200" Header="Nom de pharmacie" DisplayMemberBinding="{Binding Nom}" />
+                            <GridViewColumn Width="150" Header="Degré d'échange " DisplayMemberBinding="{Binding Degre}"/>
+                            <GridViewColumn Width="180" Header="Adress" DisplayMemberBinding="{Binding Adress}"/>
+                            <GridViewColumn Width="180" Header="Fax" DisplayMemberBinding="{Binding Fax}"/>
+
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+
+            <Grid  Grid.Column="1" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="37*"  />
+                    <RowDefinition Height="8*"/>
+                </Grid.RowDefinitions>
+
+
+                <ItemsControl ItemsSource="{Binding}" Margin="24,46,26,0" BorderThickness="1" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Grid.Row="0" BorderBrush="#FF2B357F" Foreground="#FF2980B9">
+
+                    <ItemsControl.ItemsPanel >
+                        <ItemsPanelTemplate >
+                            <StackPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="10,10,10,80" VerticalAlignment="Bottom">
+                                <Border x:Name="br" Margin="3,10,3,10"  CornerRadius="5" 
+                                Background="{Binding Color}"
+                                Width="20" BorderBrush="{Binding Color}"  
+                                BorderThickness="3" 
+                                Height="{Binding Data}">
+                                    <Border.Triggers>
+                                        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation From="0"  
+                                                             Storyboard.TargetName="br" 
+                                 Storyboard.TargetProperty="(FrameworkElement.Height)" 
+                                                              Duration="0:0:02.0"/>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Border.Triggers>
+                                </Border>
+                                <TextBlock HorizontalAlignment="Center" FontWeight="Bold" 
+                                   FontFamily="Latha" Text="{Binding Data}">
+                                    <TextBlock.RenderTransform>
+                                        <TranslateTransform Y="-30"/>
+                                    </TextBlock.RenderTransform>
+                                </TextBlock>
+                                <TextBlock HorizontalAlignment="Center" Foreground="{Binding Color}"
+                                   FontWeight="Bold" FontFamily="Latha" 
+                                   Text="{Binding Name}">
+                                    <TextBlock.RenderTransform>
+                                        <TranslateTransform Y="-20"/>
+                                    </TextBlock.RenderTransform>
+                                </TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+
+                </ItemsControl>
+                <Label Content="Graphe Des Statistiques D'Echange"  Foreground="#FF2B357F" HorizontalAlignment="Center" Margin="56,10,27,25" VerticalAlignment="Center" FontFamily="Sitka Display" Width="317" Height="45" FontWeight="Bold" FontSize="20" Background="{x:Null}" Grid.Row="1" />
+
+
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>

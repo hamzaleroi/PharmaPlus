@@ -1,0 +1,248 @@
+﻿<Page x:Class="Menu.Parametre"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"
+	  Title="Parametre"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="18"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <StackPanel x:Name="page_setting" Visibility="Visible" Background="#552980B9" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+            <materialDesign:Card Padding="15"  Grid.Row="0" Background="{x:Null}" Height="90">
+                <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" HorizontalAlignment="Center" Foreground="#FF2980B9" FontSize="50" FontFamily="Sitka Display">Paramètre</TextBlock>
+            </materialDesign:Card>
+
+            <StackPanel Margin="0,20,0,0" HorizontalAlignment="Center" Width="400" Visibility="Visible" >
+                <Button x:Name="chng_nom" Height="60" Style="{StaticResource MaterialDesignFlatButton}" Margin="30" Background="#FFEEEEF2" Foreground="#FF2980B9" Content="Changer le nom d'utilisateur" FontFamily="Roboto" FontSize="16" Click="chng_nom_Click"/>
+                <Button x:Name="chng_pass" Height="60" Style="{StaticResource MaterialDesignFlatButton}" Margin="30" Background="#FFEEEEF2" Foreground="#FF2980B9" Content="Changer le mot de pass" FontFamily="Roboto" FontSize="16" Click="chng_pass_Click"/>
+                <Button x:Name="gest_compt" Height="60" Style="{StaticResource MaterialDesignFlatButton}" Margin="30" Background="#FFEEEEF2" Foreground="#FF2980B9" Content="Gestion des comptes" FontFamily="Roboto" FontSize="16" Click="gest_compt_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+
+
+
+
+
+
+        <StackPanel x:Name="page_chng_nom" VerticalAlignment="Center" Width="560" Background="#552980B9" Visibility="Collapsed" >
+
+            <materialDesign:Card Padding="15"  Grid.Row="0" Background="{x:Null}" Height="90">
+                <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" HorizontalAlignment="Center" Foreground="#FF2980B9" FontSize="45" FontFamily="Sitka Display">Changer le nom d'utilisateur</TextBlock>
+            </materialDesign:Card>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20,20,20,0">
+                <materialDesign:PackIcon Kind="AccountKey" Height="29" Width="29" Margin="0,30,10,0" Foreground="#FF1976D2"/>
+                <PasswordBox Margin="20" Width="240" x:Name="pass" materialDesign:HintAssist.Hint="Mot de Passe" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" BorderThickness="0,0,0,2" BorderBrush="#FF1976D2" Foreground="#FF1976D2" FontFamily="Sitka Display" FontSize="18" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <materialDesign:PackIcon Kind="Account" Height="29" Width="29" Margin="0,30,10,0" Foreground="#FF1976D2"/>
+                <TextBox Margin="20" Width="240" x:Name="nom" materialDesign:HintAssist.Hint="Nouveau nom d'étulisateur" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderThickness="0,0,0,2" BorderBrush="#FF1976D2" Foreground="#FF1976D2" FontFamily="Sitka Display" FontSize="18" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20,50,20,20">
+                <Button x:Name="Reset" Style="{StaticResource MaterialDesignFlatButton}" Margin="20" Background="#FFEEEEF2" Foreground="#FF1976D2" Content="Réinitialiser" Width="115" Height="40" FontFamily="Roboto" FontSize="14" Click="Reset_Click"/>
+                <Button x:Name="valider" Style="{StaticResource MaterialDesignFlatButton}" Margin="20" Background="#FFEEEEF2" Foreground="#FF1976D2" Content="Valider" Width="115" Height="40" FontFamily="Roboto" FontSize="14" Click="valider_Click"/>
+                <Button x:Name="annuler" Style="{StaticResource MaterialDesignFlatButton}" Margin="20" Background="#FFEEEEF2" Foreground="#FF1976D2" Content="Annuler" Width="115" Height="40" FontFamily="Roboto" FontSize="14" Click="annuler_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+
+
+
+
+
+
+
+
+        <StackPanel x:Name="page_chng_pass" VerticalAlignment="Center" Width="560" Background="#552980B9" Visibility="Collapsed">
+            <materialDesign:Card Padding="15"  Grid.Row="0" Background="{x:Null}" Height="90">
+                <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" HorizontalAlignment="Center" Foreground="#FF2980B9" FontSize="45" FontFamily="Sitka Display">Changer le mot de pass</TextBlock>
+            </materialDesign:Card>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20,20,20,0">
+                <materialDesign:PackIcon Kind="AccountKey" Height="29" Width="29" Margin="0,30,10,0" Foreground="#FF1976D2"/>
+                <PasswordBox Margin="20" Width="240" x:Name="pass2" materialDesign:HintAssist.Hint="Ancient mot de Passe" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" BorderThickness="0,0,0,2" BorderBrush="#FF1976D2" Foreground="#FF1976D2" FontFamily="Sitka Display" FontSize="18" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <materialDesign:PackIcon Kind="AccountKey" Height="29" Width="29" Margin="0,30,10,0" Foreground="#FF1976D2"/>
+                <PasswordBox Margin="20" Width="240" x:Name="pass_conf" materialDesign:HintAssist.Hint="Nouveau mot de Passe" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" BorderThickness="0,0,0,2" BorderBrush="#FF1976D2" Foreground="#FF1976D2" FontFamily="Sitka Display" FontSize="18" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <materialDesign:PackIcon Kind="AccountKey" Height="29" Width="29" Margin="0,30,10,0" Foreground="#FF1976D2"/>
+                <PasswordBox Margin="20" Width="240" x:Name="pass_conf2" materialDesign:HintAssist.Hint="Confirmation du mot de Passe" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" BorderThickness="0,0,0,2" BorderBrush="#FF1976D2" Foreground="#FF1976D2" FontFamily="Sitka Display" FontSize="18" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20,50,20,20">
+                <Button x:Name="Reset2" Style="{StaticResource MaterialDesignFlatButton}" Margin="20" Background="#FFEEEEF2" Foreground="#FF1976D2" Content="Réinitialiser" Width="115" Height="40" FontFamily="Roboto" FontSize="14" Click="Reset2_Click"/>
+                <Button x:Name="valider2" Style="{StaticResource MaterialDesignFlatButton}" Margin="20" Background="#FFEEEEF2" Foreground="#FF1976D2" Content="Valider" Width="115" Height="40" FontFamily="Roboto" FontSize="14" Click="valider2_Click"/>
+                <Button x:Name="annuler2" Style="{StaticResource MaterialDesignFlatButton}" Margin="20" Background="#FFEEEEF2" Foreground="#FF1976D2" Content="Annuler" Width="115" Height="40" FontFamily="Roboto" FontSize="14" Click="annuler2_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+
+
+
+
+
+
+
+
+
+
+        <StackPanel x:Name="page_gest_compt" VerticalAlignment="Center" Width="560" Background="#552980B9" Visibility="Collapsed">
+            <materialDesign:Card Padding="15"  Grid.Row="0" Background="{x:Null}" Height="90">
+                <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" HorizontalAlignment="Center" Foreground="#FF2980B9" FontSize="45" FontFamily="Sitka Display">Gestion des comptes</TextBlock>
+            </materialDesign:Card>
+            <Grid Background="#772980B9" Width="500" Height="300">
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Visible" Margin="0,0,-17,0">
+                    <StackPanel x:Name="list_comptes" />
+                </ScrollViewer>
+            </Grid>
+            <StackPanel Orientation="Horizontal">
+                <Button Height="60" Width="200" Style="{StaticResource MaterialDesignFlatButton}" Margin="0,0,0,-200" Background="#FFEEEEF2" Foreground="#FF2980B9" Content="Retour au paramètre" FontFamily="Roboto" FontSize="16" Click="Button_Click_2"/>
+                <Button Height="60" Width="210" Style="{StaticResource MaterialDesignFlatButton}" Margin="30,0,0,-200" Background="#FFEEEEF2" Foreground="#FF2980B9" Content="Supprimer mon compte" FontFamily="Roboto" FontSize="16" Click="Button_Click_4"/>
+                <Button Visibility="Visible" Background="#2980B9" HorizontalAlignment="Right" Width="50" Height="50" Margin="20,30,0,-20" Click="Button_Click" Style="{StaticResource MaterialDesignFloatingActionAccentButton}">
+                    <materialDesign:PackIcon Kind="AccountPlus" Width="35" Height="35"/>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <StackPanel x:Name="page_add_copmte" VerticalAlignment="Center" Width="700" Background="#552980B9" Visibility="Collapsed">
+            <materialDesign:Card Padding="15" Grid.Row="0" Background="{x:Null}" Height="90">
+                <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" HorizontalAlignment="Center" Foreground="#FF2980B9" FontSize="45" FontFamily="Sitka Display">Ajouter compte</TextBlock>
+            </materialDesign:Card>
+            <StackPanel Orientation="Horizontal" Margin="0,30" HorizontalAlignment="Center">
+
+                <Grid Height="300">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Account" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center" Height="29" Width="29" Foreground="#FF1976D2" />
+                            <TextBox x:Name="Nom" Margin="0,0,0,30" Width="240" materialDesign:HintAssist.Hint="Nom d'utilisateur" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Sitka Display" FontSize="18" Foreground="#FF1976D2" BorderThickness="0,0,0,2" BorderBrush="#FF1976D2" />
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="AccountKey" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center" Height="29" Width="29" Foreground="#FF1976D2"/>
+                            <PasswordBox Width="240" Margin="0,0,0,30" x:Name="pass1_Copy" materialDesign:HintAssist.Hint="Mot de Passe" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" BorderThickness="0,0,0,2" BorderBrush="#FF1976D2" Foreground="#FF1976D2" FontFamily="Sitka Display" FontSize="18"/>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="AccountKey" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center" Height="29" Width="29" Foreground="#FF1976D2"/>
+                            <PasswordBox  Width="240" Margin="0,0,0,30" x:Name="pass1" materialDesign:HintAssist.Hint="Confirmer le Mot de Passe" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" BorderThickness="0,0,0,2" BorderBrush="#FF1976D2" Foreground="#FF1976D2" FontFamily="Sitka Display" FontSize="18" />
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+                <Grid Width="5" Height="300" Margin="35,0,10,0" Background="#551976D2"/>
+                <Grid Height="300">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="key"  Height="25" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center" Width="25" Foreground="#FF1976D2" />
+                            <PasswordBox Width="240" Margin="0,0,0,30" x:Name="Q1" materialDesign:HintAssist.Hint="Numero De Votre Carte D'identité" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" BorderThickness="0,0,0,2" BorderBrush="#FF1976D2" Foreground="#FF1976D2" FontFamily="Sitka Display" FontSize="18"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="key"  Height="25" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center" Width="25" Foreground="#FF1976D2" />
+                            <PasswordBox Width="240" Margin="0,0,0,30" x:Name="Q2" materialDesign:HintAssist.Hint="Numero De Votre Compte CCP" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" BorderThickness="0,0,0,2" BorderBrush="#FF1976D2" Foreground="#FF1976D2" FontFamily="Sitka Display" FontSize="18"/>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="key"  Height="25" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center" Width="25" Foreground="#FF1976D2" />
+                            <PasswordBox  Width="240" Margin="0,0,0,30" x:Name="Q3" materialDesign:HintAssist.Hint="La Clé de Votre  Compte CCP" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" BorderThickness="0,0,0,2" BorderBrush="#FF1976D2" Foreground="#FF1976D2" FontFamily="Sitka Display" FontSize="18" />
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="Reset1" Style="{StaticResource MaterialDesignFlatButton}" Margin="20" Background="#FFEEEEF2" Foreground="#FF1976D2" Content="Réinitialiser" Width="115" Height="40" FontFamily="Roboto" FontSize="14" Click="Reset1_Click"/>
+                <Button x:Name="valider1" Style="{StaticResource MaterialDesignFlatButton}" Margin="20" Background="#FFEEEEF2" Foreground="#FF1976D2" Content="Valider" Width="115" Height="40" FontFamily="Roboto" FontSize="14" Click="valider1_Click"/>
+                <Button x:Name="annuler1" Style="{StaticResource MaterialDesignFlatButton}" Margin="20" Background="#FFEEEEF2" Foreground="#FF1976D2" Content="Annuler" Width="115" Height="40" FontFamily="Roboto" FontSize="14" Click="annuler1_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+
+        <Popup x:Name="popup"  StaysOpen="False" AllowsTransparency="True" Placement="Center">
+            <Grid Height="400" Width="700">
+                <Grid Background="#eeFFFFFF" Height="210" Width="500">
+                    <Grid.Effect>
+                        <DropShadowEffect BlurRadius="50" Opacity="0.7" Direction="180"  RenderingBias="Quality"/>
+                    </Grid.Effect>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="70"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Content="Entrez votre mot de pass s'il vous plait" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="#FF1976D2" FontSize="25"  FontFamily="Sitka Display"/>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <materialDesign:PackIcon Kind="AccountKey" Height="29" Width="29" Margin="0,30,10,0" Foreground="#FF1976D2"/>
+                        <PasswordBox Margin="20" Width="240" x:Name="pass0" materialDesign:HintAssist.Hint="mot de Passe" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" BorderThickness="0,0,0,2" BorderBrush="#FF1976D2" Foreground="#FF1976D2" FontFamily="Sitka Display" FontSize="18" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Height="40" Content="Créer le compte" Width="155" Style="{StaticResource MaterialDesignFlatButton}" Margin="25,0" Background="#FFEEEEF2" Foreground="#FF1976D2" FontFamily="Roboto" FontSize="16" Click="Button_Click_1"/>
+                        <Button Height="40" Width="135" Style="{StaticResource MaterialDesignFlatButton}" Margin="25,0" Background="#FFEEEEF2" Foreground="#FF1976D2" Content="Annuler" FontFamily="Roboto" FontSize="16" Click="Button_Click_3"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Popup>
+
+        <Popup x:Name="popup_supp"  StaysOpen="False" AllowsTransparency="True" Placement="Center">
+            <Grid Height="400" Width="700">
+                <Grid Background="#eeFFFFFF" Height="210" Width="500">
+                    <Grid.Effect>
+                        <DropShadowEffect BlurRadius="50" Opacity="0.7" Direction="180"  RenderingBias="Quality"/>
+                    </Grid.Effect>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="70"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Content="Entrez votre mot de pass s'il vous plait" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="#FF1976D2" FontSize="25"  FontFamily="Sitka Display"/>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <materialDesign:PackIcon Kind="AccountKey" Height="29" Width="29" Margin="0,30,10,0" Foreground="#FF1976D2"/>
+                        <PasswordBox Margin="20" Width="240" x:Name="pass_" materialDesign:HintAssist.Hint="mot de Passe" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" BorderThickness="0,0,0,2" BorderBrush="#FF1976D2" Foreground="#FF1976D2" FontFamily="Sitka Display" FontSize="18" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Height="40" Content="Supprimer" Width="135" Style="{StaticResource MaterialDesignFlatButton}" Margin="25,0" Background="#FFEEEEF2" Foreground="#FF1976D2" FontFamily="Roboto" FontSize="16" Click="Button_Click_5"/>
+                        <Button Height="40" Width="135" Style="{StaticResource MaterialDesignFlatButton}" Margin="25,0" Background="#FFEEEEF2" Foreground="#FF1976D2" Content="Annuler" FontFamily="Roboto" FontSize="16"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Popup>
+    </Grid>
+</Page>

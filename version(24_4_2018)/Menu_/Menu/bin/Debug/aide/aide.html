@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Help</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="aide.css">
+</head>
+<body>
+	<header>
+	<input type="checkbox" id="btn-menu">
+		<label for="btn-menu"><img src="menu-icon.png" alt="menu"></label>
+		<div class="adem"></div>
+	<nav class="menu">
+<ul>
+<LI> <a href="#med">Medicaments</a></LI>
+<LI> <a href="#bien" >Produit Bien-étre</a></LI>
+<LI><a href="#fac" >Facture</a> </LI>
+<LI><a href="#com" >Commande</a> </LI>
+<LI><a href="#autre">Commande d'autre pharmacies</a></LI>
+<LI><a href="#echange" >Les echanges</a> </LI>
+<LI><a href="#bilan" >Bilan de vente</a> </LI>	
+<LI><a href="#map" >Map</a> </LI>
+<LI><a href="#cat" >Affichage des produits par catégorie</a> </LI>
+</ul>
+</nav>
+</header>
+<div class="content">
+	<span id="debut"></span>
+</br></br></br></br></br>
+
+
+<h4></br></br></br>Pharm Plus </h4>
+<p>
+  Lorsque l’on est étudiant, avoir une bonne mémoire est indispensable pour mener à bien ses révisions. Si vous savez quel type de mémoire vous avez, vous pourrez mieux l'utiliser, et donc obtenir de meilleurs résultats ! brain it on vous propose un test pour définir votre type de mémoire, et vous donner les astuces qu'il faut pour l'exploiter.
+
+</p>
+
+<h2 id="med"></br></br></br></br>Les medicaments</h2>
+<ul>
+  <li><a href="#med1"> Ajouter Un Medicaments</a></li>
+  <li><a href="#med2"> Rechercher Un Medicaments</a></li>
+  <li><a href="#med3"> Supprimer Un Medicaments</a></li>
+</ul>
+<h5 id="med1"></br></br></br></br>Ajouter Un Medicaments</h5>
+
+<p>Dans cette fenetre, l'utlisateur peut ajouter un medicaments au stock. D'abord ,il doit remplir le formulaire affiché,enuite il doit cliquer sur <span class="commencer">valider</span> pour sauvegarder le médicament dans la base de données.
+<p>En cas d'erreur un message sera affiché indiquant le type d'erreur.</p></br>
+</br>
+<h5 id="med2"></br></br></br></br>Rechercher Un Medicaments</h5>
+<p> 
+L'utilisateur peut affecter une operation de recherche sur un médicament ,en introduisant son DCI ou bien D'autre informations (Marque,Dosage,Forme,Effet thérapeutique...).
+</p>
+<p>Si le médicament existe dans le stock ,ses informations serons affichées,sinon son equivalent par rapport aux DCI ,et si ce dernier n'existe pas dans le stock ,un message indiquant qu'il n'existe pas dans le stock. </p>
+</br>
+<h5 id="med3"></br></br></br></br>Supprimer Un Medicaments</h5>
+<p> Pour affecter une operation de suppression.D'abord ,l'utilaseur doit remplir le formulaire affiché,ensuite il doit cliquer sur <span class="commencer">valider</span> pour valider la suppression ,un message sera affiché si l'operation a été effectuée avec succés.</p></br>
+
+<h2 id="bien"></br></br></br></br>Les produits Bien-étre</h2>
+<ul>
+  <li><a href="#B1"> Ajouter Un Produit bien-étre </a></li>
+  <li><a href="#B2"> Rechercher Un Produit bien-étre</a></li>
+  <li><a href="#B3"> Supprimer Un Produit bien-étre</a></li>
+</ul>
+<h5 id="B1"></br></br></br></br>Ajouter Un Produit bien-étre</h5>
+
+<p>Dans cette fenetre, l'utlisateur peut ajouter un produit bien-étre au stock. D'abord ,il doit remplir le formulaire affiché,enuite il doit cliquer sur <span class="commencer">valider</span> pour sauvegarder le produit dans la base de données.
+<p>En cas d'erreur un message sera affiché indiquant le type d'erreur.</p></br>
+</br>
+<h5 id="B2"></br></br></br></br>Rechercher Un Produit bien-étre</h5>
+<p> 
+L'utilisateur peut affecter une operation de recherche sur un produit bien-étre ,en introduisant la marque(Garnier, Avéne, L'oreal...) et le type (Shampooing, gel douche, créme, lait.... ).
+</p>
+<p>Si le produit existe dans le stock ,ses informations serons affichées ,sinon un message indiquant qu'il n'existe pas dans le stock. </p>
+</br>
+<h5 id="B3"></br></br></br></br>Supprimer Un Produit bien-étre</h5>
+<p> Pour affecter une operation de suppression.D'abord ,l'utilaseur doit remplir le formulaire affiché,ensuite il doit cliquer sur <span class="commencer">valider</span> pour valider la suppression ,un message sera affiché si l'operation a été effectuée avec succés.</p></br>
+
+
+<h2 id="fac"></br></br></br></br>Saisir une facture</h2>
+<p>
+  Pour saisir une facture, l'utilisateur doit remplir le nom du client et la date ainsi que le code du facture,ensuite il doit introduire les produits vendus. En cliquant sur <span class="commencer">Ajouter un produi</span>,une petite fenetre sera affiché,l'utilisateur doit specifié le type de produit vendus (Médicament ou Produit Bien-étre) aprés il doit remplir le formulaire affiché,ensuite pour valider les informations il doit cliquer sur <span class="commencer">valider</span> , s'il veut modifier  ou supprimer resp un medicament aprés l'avoir valider ,il doit le selectionner dans la liste aprés appuyer sur le boutton <span class="commencer">Modifier un produit</span> ou <span class="commencer">Supprimer un produit</span> resp.</p>
+  <p>
+  A la fin de cette operation le pharmacien valide la facture et il peut l'imprimer.
+
+</p>
+<h2 id="com"></br></br></br></br>Saisir une commande</h2>
+Cette commande est envoyée au fournisseur du produit (Medicament ou Bien-étre).
+<ul>
+  <li> Commande d'un médicament </li>
+  <li> Commande d'un Bien-étre  </li>
+</ul>
+<p>
+Pour saisir une commande, l'utilisateur doit remplir le nom du fournisseur et la date ansi que le code du commande,ensuite il doit introduire les produits qu'il veut commander en remplissant un formulaire qui s'affiche quand on clique sur <span class="commencer">Ajouter un médicament</span> ou <span class="commencer">Ajouter un produit</span>.</p>
+<p>A la fin de cette operation l'utilisateur valide la commande et l'envoie au fournisseur et il peut l'imprimer.</p>
+
+
+<h2 id="autre"></br></br></br></br>Commande d'autre pharmacies</h2>
+<p>
+Pour effectuer une commande à une autre pharmacie ,le pharmacien doit remplir le formulaire affiché et l'envoyer en cliquant le boutton <span class="commencer">Envoyer une commande</span>.
+En cas d'erreur, un message éxplicatif sera affiché.
+</p>
+<h2 id="echange"></br></br></br></br>Les echanges</h2>
+<p>
+  Cette fenetre a pour role d'informer l'utilisateur de tous les operations d'échanges éffectuées par lui.</p>
+  <p>l'utilisateur doit cliquer sur le boutton <span class="commencer">voir les informations</span> pour voir tous les informations concernants les pharmacies qu'il a effectuer une operation d'échange avec (Nom de pharmacie,Numéro de téléphone,Fax,degré d'échange,l'adresse).
+</p>
+<h2 id="bilan"></br></br></br></br>Bilan de vente</h2>
+<h2 id="map"></br></br></br></br>Map</h2>
+<p>
+Cette fenetre affiche toutes les pharmacies connectées aux réseau avec leurs informations ainsi que leur localisation géographique.</p>
+
+<h2 id="cat"></br></br></br></br>Affichage des produits par catégorie</h2>
+<p>
+Cette fenetre affiche toutes les produits selon leur categorie:
+les médicaments par effet thérapeutique et les produits bien-étre par types (Shampooing, gel douche, créme, lait.... ).</p>
+</div>
+<footer>
+	
+	<h2 style="color: black ; text-align: center ; font-size:  15px ; margin-bottom:0px;"> © Copyright PROJET-8 EQUIPE-14 2018.</h2>
+<center><div  style="
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    color: #FFFFFF;
+    display: inline-block;
+   padding-top: 30px;
+margin-left: 45%;
+   margin-top: 0;
+        transform: translateX(-50%);">
+        <a href="#debut" class="ddd" style="display: block;
+    background: grey;
+    text-decoration: none;
+   padding: 1.2rem 3rem 1.5rem;
+    color: #FFFFFF;"><span>retour en haut de page</span></a>
+		</div></center>
+</footer>	
+
+</body>
+</html>

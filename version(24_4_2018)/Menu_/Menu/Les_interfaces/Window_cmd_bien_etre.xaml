@@ -1,0 +1,96 @@
+﻿<Window x:Class="Menu.Les_interfaces.Window_cmd_bien_etre"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Menu.Les_interfaces"
+        mc:Ignorable="d"
+        Title="Window_cmd_bien_etre" Height="276.15" Width="543" WindowStyle="None" ResizeMode="NoResize" 
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid Background="#FF1976D2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid HorizontalAlignment="Left" Height="227" Margin="5,41,0,0" VerticalAlignment="Top" Width="534" Background="#FFDFE6E9">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="24*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Name="Marquetextbox" Foreground="#FF2980B9 " HorizontalAlignment="Left" Height="45" Margin="109,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="135" Background="{x:Null}" BorderBrush="#FF2980B9"  Grid.ColumnSpan="2"
+  materialDesign:HintAssist.Hint="Marque"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+
+            <TextBox Name="Typetextbox" Foreground="#FF2980B9 " Margin="109,91,240,100" TextWrapping="Wrap" Text="" Background="{x:Null}"  BorderBrush="#FF2980B9" Grid.ColumnSpan="2"
+  materialDesign:HintAssist.Hint="Type"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+
+            <TextBox Name="Compotextbox" Foreground="#FF2980B9" HorizontalAlignment="Left" Height="45" Margin="102,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="152" Background="{x:Null}"  BorderBrush="#FF2980B9" Grid.Column="1"
+  materialDesign:HintAssist.Hint="Composition Principale"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+
+            <TextBox Name="Quanttextbox" Foreground="#FF2980B9" Margin="102,93,10,100" TextWrapping="Wrap" Text="" Background="{x:Null}"  BorderBrush="#FF2980B9"
+  materialDesign:HintAssist.Hint="Quantité"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Grid.Column="1" />
+
+            <Button x:Name="Renitialiser" Margin="0,170,229,24"  Grid.Column="1" Click="Renitialiser_Click_1" 
+                Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+                    ToolTip="Réinitialiser " Height="Auto" Width="Auto" >
+                <materialDesign:PackIcon Kind="Autorenew" Height="24" Foreground="#FFDFE6E9 " Width="24"  />
+            </Button>
+
+            <Button  Margin="59,170,170,24"  Grid.Column="1" Click="valider_Click" Name="valider" 
+                Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+                    ToolTip="Valider " Height="Auto" Width="Auto" >
+                <materialDesign:PackIcon Kind="Check" Height="24" Foreground="#FFDFE6E9 " Width="24"  />
+            </Button>
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" MouseLeftButtonDown="Grid_MouseEnter" Height="29" VerticalAlignment="Top" Width="539" Margin="0,0,-4,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="17*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Margin="13,0,13,-7" TextWrapping="Wrap" Foreground="#FFDFE6E9" FontSize="18" FontFamily="Sitka Display" FontWeight="Bold" Padding="2,2,2,1" Grid.Row="1" TextAlignment="Center" Text="Ajouter un produit de bien etre à la commande"/>
+            <Button  Margin="499,0,10,-7" Click="fermer_bouton" RenderTransformOrigin="0.25,2.75" Grid.Row="1" Height="Auto" Background="#FF1976D2" BorderBrush="#FF1976D2">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse StrokeThickness="1" Fill="#FF2980B9"/>
+
+                            <Ellipse Stroke="#FFEEF3FD"
+            					StrokeThickness="1" Fill="{x:Null}"/>
+                            <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                <Canvas x:Name="Calque_1" Width="840" Height="595" Canvas.Left="0" Canvas.Top="0">
+                                    <Canvas.RenderTransform>
+                                        <TranslateTransform X="0" Y="0"/>
+                                    </Canvas.RenderTransform>
+                                    <!--Unknown tag: metadata-->
+                                    <!--Unknown tag: sodipodi:namedview-->
+                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path10" Fill="#FFDFE6E8">
+                                        <Path.Data>
+                                            <PathGeometry Figures="M601.528 393.328L506.2 298l95.328-95.328c23.42-23.42 22.921-62.262-0.509-85.691  s-62.271-23.929-85.691-0.509L420 211.8l-95.328-95.328c-23.42-23.42-62.262-22.92-85.691 0.509s-23.929 62.271-0.509 85.691  L333.8 298l-95.328 95.328c-23.42 23.42-22.921 62.262 0.509 85.691s62.271 23.929 85.691 0.509L420 384.2l95.328 95.328  c23.42 23.421 62.262 22.921 85.691-0.509S624.948 416.749 601.528 393.328z" FillRule="NonZero"/>
+                                        </Path.Data>
+                                    </Path>
+                                </Canvas>
+                            </Viewbox>
+                            <ContentPresenter HorizontalAlignment="Center"
+            					VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+        </Grid>
+
+
+    </Grid>
+</Window>

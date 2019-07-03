@@ -1,0 +1,86 @@
+﻿<Page x:Class="Menu.Les_interfaces.Page_bien"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Menu.Les_interfaces"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="800"
+      Title="Page_bien"
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}">
+
+    <Grid Background="#FFDFE6E9 " >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="56*"></RowDefinition>
+            <RowDefinition Height="19*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBox
+  materialDesign:HintAssist.Hint= "Marque * " Width="164"  Name="marquetextbox" BorderBrush="#FF2980B9" Foreground="#FF2980B9 "  Margin="0,0,54,36" TextWrapping="Wrap" Text="" Background="{x:Null}"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" CaretBrush="#FF2980B9"  SelectionBrush="#FF2980B9" Grid.Row="0" HorizontalAlignment="Right" Height="37" VerticalAlignment="Bottom" />
+
+                <TextBox
+  materialDesign:HintAssist.Hint= "Type * " Width="164" Name="typetextbox" BorderBrush="#FF2980B9" Foreground="#FF2980B9 "  Margin="0,39,54,0" TextWrapping="Wrap" Text=""   Background="{x:Null}"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" CaretBrush="#FF2980B9"  SelectionBrush="#FF2980B9" Grid.Row="1" HorizontalAlignment="Right" Height="37" VerticalAlignment="Top" />
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBox
+  materialDesign:HintAssist.Hint= "Composition Principale * "  Name="comptextbox" BorderBrush="#FF2980B9" Foreground="#FF2980B9 " HorizontalAlignment="Left"  Margin="85,0,0,33" TextWrapping="Wrap" Text="" Width="164" Background="{x:Null}"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" CaretBrush="#FF2980B9"  SelectionBrush="#FF2980B9" Grid.Row="0" Height="57" VerticalAlignment="Bottom" />
+                <TextBox
+  materialDesign:HintAssist.Hint= "Quantité * "  Name="quanttextbox" BorderBrush="#FF2980B9" Foreground="#FF2980B9 " HorizontalAlignment="Left"  Margin="85,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="164" Background="{x:Null}"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" CaretBrush="#FF2980B9"  SelectionBrush="#FF2980B9" Grid.Row="1" />
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1" Height="42" Margin="0,11,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Renitialiser"   Click="Renitialiser_Click_1" 
+                Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+                    ToolTip="Réinitialiser " Height="40" Width="40" RenderTransformOrigin="0.5,0.5" Margin="0,0,47,0" HorizontalAlignment="Right" VerticalAlignment="Top" >
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <materialDesign:PackIcon Kind="Autorenew" Height="24" Foreground="#FFDFE6E9 " Width="24"  />
+            </Button>
+
+            <Button   Grid.Column="1" Click="valider_Click" x:Name="valider" 
+                Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+                    ToolTip="Valider " Height="40" Width="40" Margin="47,-1,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                <materialDesign:PackIcon Kind="Check" Height="24" Foreground="#FFDFE6E9 " Width="24"  />
+            </Button>
+
+        </Grid>
+
+
+
+    </Grid>
+</Page>
